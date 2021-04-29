@@ -5,7 +5,6 @@
       <v-icon small class="red--text mx-0 px-0">mdi-cards-heart</v-icon>
       &nbsp;{{ $t('footer.BY') }}:
     </div>
-    <a href="https://daniel-avellaneda.com">https://daniel-avellaneda.com</a>
   </v-footer>
 </template>
 

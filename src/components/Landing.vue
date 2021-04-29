@@ -1,9 +1,3 @@
 <template>
-  <v-container fluid>
-    <v-layout row wrap>
-      <Heading :title="$t('landing.TITLE')" />
-      <Description :description="$t('landing.DESCRIPTION')" />
-    </v-layout>
-    <ProjectDescription />
-  </v-container>
+  <v-container fluid>123</v-container>
 </template>

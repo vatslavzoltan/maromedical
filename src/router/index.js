@@ -1,32 +1,29 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Meta from 'vue-meta'
-import routes from '@/router/routes'
-import { store } from '@/store'
-import { checkIfTokenNeedsRefresh } from '@/utils/utils.js'
-import { checkForUpdates } from '@/utils/updates.js'
-import * as types from '@/store/mutation-types'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
 
-Vue.use(Router)
-Vue.use(Meta)
+Vue.use(VueRouter)
 
-const router = new Router({
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+]
+
+const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [...routes]
-})
-
-router.beforeEach((to, from, next) => {
-  checkForUpdates()
-  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth)
-  const isTokenSet = store.getters.isTokenSet
-  if (requiresAuth && !isTokenSet) {
-    return next('/login')
-  }
-  checkIfTokenNeedsRefresh()
-  store.commit(types.SUCCESS, null)
-  store.commit(types.ERROR, null)
-  return next()
+  routes
 })
 
 export default router

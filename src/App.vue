@@ -19,4 +19,5 @@
 
 <style lang="scss">
 @import './assets/sass/main.sass';
+@import './assets/splide-default.min.css';
 </style>

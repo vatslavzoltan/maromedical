@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper carousel">
     <splide :options="options" @splide:moved="moved">
       <splide-slide v-for="slide in slides" :key="slide.src">
         <p>{{ slide.src }}</p>

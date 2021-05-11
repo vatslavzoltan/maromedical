@@ -64,6 +64,56 @@
         <Carousel />
       </Container>
     </div>
+    <div class="brands">
+      <Container>
+        <Heading>BRANDS WE PROVIDE</Heading>
+        <Row custom="jc brands_row">
+          <img src="@/assets/b1.png" class="brand_image" alt="#" />
+          <img src="@/assets/b2.png" class="brand_image" alt="#" />
+          <img src="@/assets/b3.png" class="brand_image" alt="#" />
+          <img src="@/assets/b4.png" class="brand_image" alt="#" />
+          <img src="@/assets/b5.png" class="brand_image" alt="#" />
+          <img src="@/assets/b6.png" class="brand_image" alt="#" />
+          <img src="@/assets/b7.png" class="brand_image" alt="#" />
+          <img src="@/assets/b8.png" class="brand_image" alt="#" />
+          <img src="@/assets/b9.png" class="brand_image" alt="#" />
+          <img src="@/assets/b10.png" class="brand_image" alt="#" />
+          <img src="@/assets/b11.png" class="brand_image" alt="#" />
+        </Row>
+      </Container>
+    </div>
+    <div class="home_contact">
+      <Container>
+        <Row custom="jb">
+          <div class="adress">
+            <p class="adress_1">keep in touch</p>
+            <p class="adress_2">Сontact us if you have any questions</p>
+            <Row custom="jb">
+              <div class="adress_col">
+                <p class="adress_3">Contact person:</p>
+                <p class="adress_4">Sardor Muminov<br />(Sam)</p>
+                <p class="adress_3">Phone Number:</p>
+                <p class="adress_4">
+                  <a href="tel:(929) 509-0690">(929) 509-0690</a>
+                </p>
+              </div>
+              <div class="adress_col">
+                <p class="adress_3">Email us:</p>
+                <p class="adress_4">
+                  <a href="mailto:info@maromedical.net">info@maromedical.net</a>
+                  <br>
+                  <a href="mailto:orders@maromedical.net"
+                    >orders@maromedical.net</a
+                  >
+                </p>
+                <p class="adress_3">Showroom for local customers:</p>
+                <p class="adress_4">Hallandale Beach, FL</p>
+              </div>
+            </Row>
+          </div>
+        </Row>
+      </Container>
+    </div>
   </div>
 </template>
 

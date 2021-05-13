@@ -10,7 +10,7 @@
               MEDICAL & SURGICAL SUPPLY HAS BEEN SERVING MEDICAL SUPPLY NEEDS OF
               RESIDENTS AND HEALTH CARE PROVIDERS IN ALL NEW YORK STATE AREA.
             </p>
-            <router-link class="hero_btn" to="/">GO TO SHOP</router-link>
+            <router-link class="hero_btn" to="/products">GO TO SHOP</router-link>
           </div>
           <div class="hero_img">
             <img alt="Better life" src="@/assets/hero_img.png" />

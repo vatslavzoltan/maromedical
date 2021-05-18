@@ -10,3 +10,4 @@ Vue.use(VueCompositionAPI)
 Vue.component('Row', Row)
 Vue.component('Container', Container)
 Vue.component('Heading', Heading)
+Vue.prototype.$apiUrl = 'http://174.138.50.91';

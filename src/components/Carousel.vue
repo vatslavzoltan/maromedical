@@ -1,27 +1,32 @@
 <template>
   <div class="wrapper carousel">
     <splide :options="options" @splide:moved="moved">
-      <splide-slide v-for="slide in slides" :key="slide.src">
-        <p>{{ slide.src }}</p>
+      <splide-slide v-for="slide in list" :key="slide.id">
+        <img
+          :src="`${$apiUrl}/image/${slide.image_url}`"
+          alt="#"
+          class="featured_product_image"
+        />
       </splide-slide>
     </splide>
   </div>
 </template>
 
 <script>
-
 export default {
+  props: {
+    list: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       options: {
         rewind: true,
-        gap: "1rem",
-      },
-      slides: [
-        { src: "image01.jpg" },
-        { src: "image02.jpg" },
-        { src: "image03.jpg" },
-      ],
+        perPage: 5,
+        arrows: false
+      }
     };
   },
 

@@ -8,32 +8,39 @@
         Manufacturers: Covidien, dr.Comfort, Presto, First Quality and Some More
         …
       </p>
-      <row custom='jb'>
-        <div class="service_item">
-          <p class="service_count">01</p>
+      <row custom="jb">
+        <div
+        v-for="item in list"
+        :key="item.id"
+        class="service_item">
+          <p class="service_count">{{item.title}}</p>
           <p class="service_descr">
-            WE REPAIR WHEELCHAIRS AND ROLLATORS AND OTHER EQUIPMENT.
-          </p>
-        </div>
-        <div class="service_item">
-          <p class="service_count">02</p>
-          <p class="service_descr">
-            WE REPAIR WHEELCHAIRS AND ROLLATORS AND OTHER EQUIPMENT.
-          </p>
-        </div>
-        <div class="service_item">
-          <p class="service_count">03</p>
-          <p class="service_descr">
-            WE REPAIR WHEELCHAIRS AND ROLLATORS AND OTHER EQUIPMENT.
-          </p>
-        </div>
-        <div class="service_item">
-          <p class="service_count">04</p>
-          <p class="service_descr">
-            WE REPAIR WHEELCHAIRS AND ROLLATORS AND OTHER EQUIPMENT.
+            {{item.description}}
           </p>
         </div>
       </row>
     </container>
   </div>
 </template>
+<script>
+import axios from "axios";
+
+export default {
+  name: "Services",
+  data: () => {
+    return {
+      list: [],
+    };
+  },
+  created() {
+    axios
+      .get(this.$apiUrl + "/services")
+      .then((res) => {
+        this.list = res.data || [];
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  },
+};
+</script>

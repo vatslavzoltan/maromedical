@@ -10,7 +10,9 @@
               MEDICAL & SURGICAL SUPPLY HAS BEEN SERVING MEDICAL SUPPLY NEEDS OF
               RESIDENTS AND HEALTH CARE PROVIDERS IN ALL NEW YORK STATE AREA.
             </p>
-            <router-link class="hero_btn" to="/products">GO TO SHOP</router-link>
+            <router-link class="hero_btn" to="/products"
+              >GO TO SHOP</router-link
+            >
           </div>
           <div class="hero_img">
             <img alt="Better life" src="@/assets/hero_img.png" />
@@ -61,10 +63,10 @@
     <div class="featured">
       <Container>
         <Heading>Featured latest Products</Heading>
-        <Carousel />
       </Container>
+      <Carousel :list="featuredProducts" />
     </div>
-    <Brands/>
+    <Brands />
     <div class="home_contact">
       <Container>
         <Row custom="jb">
@@ -84,7 +86,7 @@
                 <p class="adress_3">Email us:</p>
                 <p class="adress_4">
                   <a href="mailto:info@maromedical.net">info@maromedical.net</a>
-                  <br>
+                  <br />
                   <a href="mailto:orders@maromedical.net"
                     >orders@maromedical.net</a
                   >
@@ -101,13 +103,35 @@
 </template>
 
 <script>
+import axios from "axios";
+
 import Carousel from "../components/Carousel";
 import Brands from "../components/Brands";
 export default {
   name: "Home",
   components: {
     Carousel,
-    Brands
+    Brands,
+  },
+  data: () => {
+    return {
+      featuredProducts: [],
+    };
+  },
+  methods: {
+    getFeaturedProducts: (th) => {
+      axios
+        .get(th.$apiUrl + "/products")
+        .then((res) => {
+          th.featuredProducts = res.data || [];
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+  },
+  created() {
+    this.getFeaturedProducts(this);
   },
 };
 </script>

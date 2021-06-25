@@ -64,7 +64,7 @@
       <Container>
         <Heading>Featured latest Products</Heading>
       </Container>
-      <Carousel :list="featuredProducts" />
+      <Carousel v-if="featuredProducts.length" :list="featuredProducts" />
     </div>
     <Brands />
     <div class="home_contact">
@@ -75,11 +75,17 @@
             <p class="adress_2">Сontact us if you have any questions</p>
             <Row custom="jb">
               <div class="adress_col">
-                <p class="adress_3">Contact person:</p>
-                <p class="adress_4">Sardor Muminov<br />(Sam)</p>
-                <p class="adress_3">Phone Number:</p>
-                <p class="adress_4">
-                  <a href="tel:(929) 509-0690">(929) 509-0690</a>
+                <p class="adress_3" v-if="contacts.person">Contact person:</p>
+                <p class="adress_4" v-if="contacts.person">
+                  {{ contacts.person }}
+                </p>
+                <p class="adress_3" v-if="contacts.phone">Phone Number:</p>
+                <p
+                  class="adress_4"
+                  v-for="phone in contacts.phone"
+                  :key="phone"
+                >
+                  <a :href="`tel:${phone}`">{{ phone }}</a>
                 </p>
               </div>
               <div class="adress_col">
@@ -95,6 +101,15 @@
                 <p class="adress_4">Hallandale Beach, FL</p>
               </div>
             </Row>
+          </div>
+          <div class="map">
+            <GmapMap
+              :center="center"
+              :zoom="12"
+              style="width: 100%; height: 400px"
+            >
+            <GmapMarker :position="center" />
+            </GmapMap>
           </div>
         </Row>
       </Container>
@@ -116,9 +131,16 @@ export default {
   data: () => {
     return {
       featuredProducts: [],
+      contacts: [],
+      showroom: [],
+      center: { lat: 45.508, lng: -73.587 },
+      currentPlace: null,
     };
   },
   methods: {
+    setPlace(place) {
+      this.currentPlace = place;
+    },
     getFeaturedProducts: (th) => {
       axios
         .get(th.$apiUrl + "/products")
@@ -129,9 +151,38 @@ export default {
           console.log(e);
         });
     },
+    getContacts: (th) => {
+      axios
+        .get(th.$apiUrl + "/contact")
+        .then((res) => {
+          th.contacts = res.data || [];
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+    getShowroom: (th) => {
+      axios
+        .get(th.$apiUrl + "/contact/showroom")
+        .then((res) => {
+          th.showroom = res.data[0] || [];
+          var addressObj = {
+            address_line_1: res.data[0].address,
+          };
+          th.$geocoder.send(addressObj, (response) => {
+            console.log(response);
+            th.center = response.results[0].geometry.location;
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
   },
   created() {
     this.getFeaturedProducts(this);
+    this.getContacts(this);
+    this.getShowroom(this);
   },
 };
 </script>

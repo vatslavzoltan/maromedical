@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper carousel">
-    <splide :options="options" @splide:moved="moved">
+    <splide :options="options">
       <splide-slide v-for="slide in list" :key="slide.id">
         <img
           :src="`${$apiUrl}/image/${slide.image_url}`"
@@ -28,12 +28,6 @@ export default {
         arrows: false
       }
     };
-  },
-
-  methods: {
-    moved(splide, newIndex) {
-      console.log("moved", newIndex);
-    },
-  },
+  }
 };
 </script>

@@ -2,7 +2,9 @@
   <div class="products">
     <container>
       <heading>Our Products</heading>
-      <button class="back_button" onclick="window.history.back()">Back to List of products</button>
+      <button class="back_button" onclick="window.history.back()">
+        Back to List of products
+      </button>
       <row custom="single_product_row js">
         <img
           :src="`${$apiUrl}/image/${product.image_url}`"
@@ -10,9 +12,9 @@
           class="single_product_image"
         />
         <div class="product_descr">
-          <p class="p1">{{product.brand}}</p>
-          <p class="p2">{{product.name}}</p>
-          <p class="p3">{{product.description}}</p>
+          <p class="p1">{{ product.brand }}</p>
+          <p class="p2">{{ product.name }}</p>
+          <p class="p3" v-html="product.description"></p>
         </div>
       </row>
     </container>

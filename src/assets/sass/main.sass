@@ -378,3 +378,28 @@ body
     color: #66757c
     font-size: 12px
     line-height: 20px
+@media screen and ( max-width: 968px )
+    .desc_menu
+       display: none
+    .header_row
+        justify-content: space-between !important
+        padding: 0 45px
+    .mobile_menu
+        display: none
+        padding-top: 45px
+        text-align: center
+        &.active
+            position: fixed
+            display: block
+            z-index: 5
+            top: 90px
+            right: 0
+            bottom: 0
+            left: 0
+            background-color: rgba(#fff, .8)
+    .mobile_nav_item
+        display: block
+        text-align: center
+        margin-bottom: 16px
+        text-transform: uppercase
+        font-weight: 500

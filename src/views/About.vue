@@ -20,22 +20,65 @@
       </div>
     </div>
     <container>
-          <Brands/>
-          <div class="about_contact">
-            <heading>find us in HALLANDALE BEACH, FLORIDA</heading>
-            <br>
-            <heading>1464 E HALLANDALE BEACH BLVD, HALLANDALE BEACH, FL 33009</heading>
+      <Brands />
+      <div class="about_contact">
+        <heading>find us</heading>
+        <br />
+        <div class="row jc">
+          <div
+            v-for="(item, index) in showrooms"
+            :key="index"
+            class="showroom_item"
+          >
+            <p class="about_showroom_heading">Showroom №{{ index + 1 }}</p>
+            <p class="about_showroom_text">{{ item.address }}</p>
           </div>
+        </div>
+      </div>
     </container>
+    <div class="about_map">
+      <GmapMap :center="center" :zoom="12" style="width: 100%; height: 400px">
+        <GmapMarker :position="center" />
+      </GmapMap>
+    </div>
   </div>
 </template>
 <script>
+import axios from "axios";
+
 import Brands from "../components/Brands";
 
 export default {
   name: "About",
   components: {
-    Brands
+    Brands,
+  },
+  data: () => {
+    return {
+      showrooms: [],
+      center: { lat: 25.9843882, lng: -80.13344310000001 },
+    };
+  },
+  methods: {
+    getShowroom: (th) => {
+      axios
+        .get(th.$apiUrl + "/contact/showroom")
+        .then((res) => {
+          th.showrooms = res.data || [];
+          var addressObj = {
+            address_line_1: res.data[0].address,
+          };
+          th.$geocoder.send(addressObj, (response) => {
+            th.center = response.results[0].geometry.location;
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+  },
+  created() {
+    this.getShowroom(this);
   },
 };
 </script>

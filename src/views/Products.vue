@@ -24,6 +24,11 @@
           <p class="product_grid_item_category">{{item.brand}}</p>
         </router-link>
       </div>
+      <div
+      v-if="!products.length"
+      class="empty_state">
+        <p>no items...</p>
+      </div>
     </container>
   </div>
 </template>

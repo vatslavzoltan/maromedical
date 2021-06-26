@@ -178,6 +178,8 @@ body
     font-weight: 400
     color: rgba(0, 0, 0, .6)
     margin-bottom: 25px
+    max-width: 260px
+    display: block
 .services, .products
     padding: 65px 0 165px
 .services_heading_text
@@ -255,6 +257,7 @@ body
 .about_hero
     margin-bottom: -275px
 .about_hero_image
+    min-height: 900px
     width: 100%
 .about_hero_descr
     padding: 85px 50px
@@ -319,3 +322,59 @@ body
     background-position: 0 50%
     cursor: pointer
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACBklEQVRoge2Yy27UQBBFbwVWjvds3Zb4CX5mnJBAeCYEAgE2rMIrPEUCJELu5r8Ym38Y95LLgkGKPJ6QUT8ioT7LKvnWLdvddheQSCQSiURiMZSePFCmW/OhJT5EFkHpyX1A9gEQwHpTLX9z0VvyY+tsnDAP/Ll5x2XdrbpoRmugNHb7hPm/CAVXXHQvulx8Vkpjt0m+6ccJ1G2bXXPRDr4GSm3vEXzbj0/Nr+GZ/HLRD9pAaPMAcMFVYB5FbbcgfNeP+zQPBHoCRW23JIJ5IMAuNM+8ANq3ecDzK1QYuyng+35cAD1us6u+zU+1/VAYuymMa36q706h7V0BP8wkCNP8zFZDmQc8NHCe5gHHBlRt70D4cSYRyTzgugst8fKczI8Y5gEPr5DS3ScAtwaUnzaj5T1X/X/hZRGrujuA4OaAevAmvG2j85oQ8Mm4yp/7qtPH25e4qbLbIA77cUL2ynqy66tOH7//QqQUxh4IcGOmEPl4vJK/8FoPIX7mTmmCwt12lL/0WS7MeYCU0thDAhszKfBRW+WvfJUKd6CJ1ETYIyUppbafKbg+kHvYrOSvXUuEnwud1gS401R5f1KxEHEGW6QoY78AGJhAuDURZy4kwmaUbQA4GrBwyUna5eKFIUV9t19BrE/L7zdVthPVgzOkKNMdKW2dF/D5QUYfKicSiUTi/+Q3EDjmxOckfTAAAAAASUVORK5CYII=')
+.empty_state
+    text-align: center
+    color: $accent
+    font-weight: 500
+    font-size: 40px
+    margin-top: 50px
+    text-transform: uppercase
+.showroom_item
+    margin-top: 65px
+    margin-bottom: 60px
+    width: 100%
+    max-width: 315px
+    &:not(:last-child)
+        margin-right: 80px
+.about_showroom_heading
+    color: rgba($accent, .65)
+    font-size: 18px
+    padding-bottom: 10px
+    margin-bottom: 16px
+    border-bottom: 1px solid $accent
+.about_showroom_text
+    font-size: 16px
+    color: #000
+.about_map
+    width: 100%
+.contact_row
+    align-items: flex-start
+    margin: 0 auto
+    margin-top: 50px
+    padding-bottom: 100px
+    max-width: 1200px
+.contact
+    padding-top: 65px
+    .showroom_item
+        margin-top: 0
+        margin-bottom: 25px
+    .adress_3
+        color: $accent
+        font-size: 18px
+        margin-bottom: 12px
+    .adress_4
+        color: #000
+        font-size: 16px
+        display: block
+.contact_text_info
+    width: 30%
+.showrooms_col
+    width: 70%
+.contact_text_info
+    align-items: flex-start
+    margin: 0 auto
+.footer
+    padding: 22px 0
+    color: #66757c
+    font-size: 12px
+    line-height: 20px

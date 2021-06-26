@@ -91,14 +91,23 @@
               <div class="adress_col">
                 <p class="adress_3">Email us:</p>
                 <p class="adress_4">
-                  <a href="mailto:info@maromedical.net">info@maromedical.net</a>
-                  <br />
-                  <a href="mailto:orders@maromedical.net"
-                    >orders@maromedical.net</a
+                  <span
+                    class="adress_4"
+                    v-for="email in contacts.email"
+                    :key="email"
                   >
+                    <a :href="`mailto:${email}`">{{ email }}</a>
+                    <br />
+                  </span>
                 </p>
                 <p class="adress_3">Showroom for local customers:</p>
-                <p class="adress_4">Hallandale Beach, FL</p>
+                <p
+                  v-for="(item, index) in showrooms"
+                  :key="index"
+                  class="adress_4"
+                >
+                 {{ item.address }}
+                </p>
               </div>
             </Row>
           </div>
@@ -108,7 +117,7 @@
               :zoom="12"
               style="width: 100%; height: 400px"
             >
-            <GmapMarker :position="center" />
+              <GmapMarker :position="center" />
             </GmapMap>
           </div>
         </Row>
@@ -132,8 +141,8 @@ export default {
     return {
       featuredProducts: [],
       contacts: [],
-      showroom: [],
-      center: { lat: 45.508, lng: -73.587 },
+      showrooms: [],
+      center: { lat: 25.9843882, lng: -80.13344310000001 },
       currentPlace: null,
     };
   },
@@ -165,7 +174,7 @@ export default {
       axios
         .get(th.$apiUrl + "/contact/showroom")
         .then((res) => {
-          th.showroom = res.data[0] || [];
+          th.showrooms = res.data || [];
           var addressObj = {
             address_line_1: res.data[0].address,
           };

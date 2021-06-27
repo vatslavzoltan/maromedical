@@ -8,7 +8,7 @@
             <p class="hero_2">Medical & Surgical Supply</p>
             <p class="hero_3">
               MEDICAL & SURGICAL SUPPLY HAS BEEN SERVING MEDICAL SUPPLY NEEDS OF
-              RESIDENTS AND HEALTH CARE PROVIDERS IN ALL NEW YORK STATE AREA.
+              RESIDENTS AND HEALTH CARE PROVIDERS IN ALL Florida STATE AREA.
             </p>
             <router-link class="hero_btn" to="/products"
               >GO TO SHOP</router-link
@@ -37,7 +37,7 @@
               <img src="@/assets/w3.svg" alt="#" />
               <p class="why_name">Store</p>
               <p class="why_descr">
-                Multiple showrooms<br />for our customers.
+                Beautiful showrooms<br />for our customers.
               </p>
             </div>
             <div class="why_item">
@@ -52,8 +52,8 @@
               <img src="@/assets/w5.svg" alt="#" />
               <p class="why_name">Location</p>
               <p class="why_descr">
-                Shipping all over the New<br />
-                York state.
+                Shipping all over the United Stated <br />
+                of America.
               </p>
             </div>
           </Row>

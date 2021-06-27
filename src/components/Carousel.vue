@@ -30,6 +30,9 @@ export default {
           968: {
             perPage: 3,
           },
+          568: {
+            perPage: 1,
+          },
         },
       },
     };

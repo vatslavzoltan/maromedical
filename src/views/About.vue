@@ -1,13 +1,14 @@
 <template>
   <div class="about">
     <div class="about_hero">
-      <img src="@/assets/about_hero.jpg" alt="#" class="about_hero_image" />
+      <img src="@/assets/about_hero.jpg" alt="#" class="about_hero_image m_hide" />
+      <img src="@/assets/about_hero_mobile.jpg" alt="#" class="about_hero_image m_show" />
       <div class="about_hero_descr">
         <img class="logo" alt="Better life" src="@/assets/logo.png" />
         <h3 class="about_hero_header">Medical & Surgical supplies</h3>
         <p class="about_hero_text">
           MARO MEDICAL & SURGICAL SUPPLY HAS BEEN SERVING MEDICAL SUPPLY NEEDS
-          OF RESIDENTS AND HEALTH CARE PROVIDERS IN ALL NEW YORK STATE AREA. WE
+          OF RESIDENTS AND HEALTH CARE PROVIDERS IN ALL United Stated AREA. WE
           ARE A FULL-SERVICE PROVIDER OF HOME MEDICAL EQUIPMENT, INCONTINENCE
           AND URINARY CARE ITEMS, ORTHOPEDIC, DIABETIC SUPPLIES AND OSTOMY
           SUPPLIES, ORTHOTICS & PROSTHETICS, BED AND DOOR ALARMS WITH

@@ -5,7 +5,7 @@
     <footer class="footer">
       <container>
         <p>
-          Copyright © 2020 « Maro».
+          Copyright © 2021 «BETTER LIFE».
           <br />
           All rights reserved. Privacy Policy
         </p>

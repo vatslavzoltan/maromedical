@@ -25,7 +25,8 @@ body
         justify-content: flex-start
     &.jc
         justify-content: center
-
+.m_show
+    display: none
 .logo
     width: 48px
     display: inline-block
@@ -76,6 +77,7 @@ body
     width: 100%
     max-width: 500px
     margin: 0 auto
+    text-transform: uppercase
 .hero_btn
     color: #fff
     background-color: $accent
@@ -257,7 +259,7 @@ body
 .about_hero
     margin-bottom: -275px
 .about_hero_image
-    min-height: 900px
+    min-height: 500px
     width: 100%
 .about_hero_descr
     padding: 85px 50px
@@ -383,6 +385,27 @@ body
 .hamburger
     display: none
 @media screen and ( max-width: 968px )
+    .contact_row
+        margin-bottom: 50px
+    .contact_text_info
+        width: 45%
+    .showrooms_col
+        width: 50%
+    .about_hero_image
+        min-height: 0
+    .about_hero_descr
+        padding: 0
+    .products_grid
+        max-width: 100%
+        justify-content: space-between
+        padding: 0 20px
+        box-sizing: border-box
+    .product_grid_item
+        max-width: 215px
+    .services, .products
+        padding-bottom: 80px
+    .service_item
+        width: 45%
     .home_contact
         .row
             align-items: flex-start
@@ -396,7 +419,7 @@ body
         padding-bottom: 80px
     .footer
         padding-left: 45px
-    .featured_product_image 
+    .featured_product_image
         width: 230px
     .container > .row
         padding: 0 45px
@@ -407,7 +430,7 @@ body
     .hamburger
         display: block
     .desc_menu
-       display: none
+        display: none
     .header_row
         justify-content: space-between !important
         padding: 0 45px
@@ -430,3 +453,72 @@ body
         margin-bottom: 16px
         text-transform: uppercase
         font-weight: 500
+@media screen and ( max-width: 568px )
+    .contact_text_info
+        .adress_col
+            text-align: left
+    .contact_text_info,.showrooms_col
+        width: 100%
+    .about_contact
+        margin-top: 50px
+    .about_hero_text
+        font-size: 16px
+    .about_hero_descr
+        padding: 24px 8px
+        box-sizing: border-box
+        top: -195px
+    .m_hide
+        display: none
+    .m_show
+        display: block
+    .back_button
+        margin-left: 24px
+        margin-top: 30px
+    .single_product_image
+        margin-right: 0
+        max-width: 100%
+    .product_grid_item
+        width: 45%
+    .products_grid
+        justify-content: flex-start
+    .product_grid_item:not(:nth-child(3n))
+        margin-right: 10px
+    .products_nav_item 
+        padding: 14px
+    .service_item
+        width: 100%
+        margin-bottom: 20px
+    .container > .row
+        padding: 0 24px
+    .services_heading_text
+        padding: 0 16px
+        box-sizing: border-box
+    .brands
+        padding-bottom: 0
+    .adress_1
+        text-align: center
+    .adress_2
+        text-align: center
+        font-size: 28px
+    .featured
+        margin-top: 0
+    .adress_4
+        max-width: 100%
+    .adress_col
+        width: 100%
+        text-align: center
+    .adress,.map
+        width: 100%
+    .brand_image:not(:last-child)
+        margin-right: 10px
+    .featured_product_image
+        width: 100%
+    .why_item
+        width: auto
+    .hero
+        .row
+            flex-direction: column-reverse
+    .hero_img img
+        width: 110%
+    .hero_text, .hero_img
+        width: 100%

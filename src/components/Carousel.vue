@@ -25,9 +25,14 @@ export default {
       options: {
         rewind: true,
         perPage: 5,
-        arrows: false
-      }
+        arrows: false,
+        breakpoints: {
+          968: {
+            perPage: 3,
+          },
+        },
+      },
     };
-  }
+  },
 };
 </script>

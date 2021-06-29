@@ -15,6 +15,24 @@ body
 .container
     max-width: 1440px
     margin: 0 auto
+    position: relative
+.wrapper
+    position: relative
+    min-height: 85vh
+    .single_bg_top
+        position: absolute
+        top: 0
+        right: 0
+        z-index: -1
+        width: 100%
+        max-width: 320px
+    .single_bg_bottom
+        position: absolute
+        left: 0
+        bottom: 0
+        z-index: -1
+        width: 100%
+        max-width: 220px
 .row
     display: flex
     align-items: center
@@ -31,9 +49,12 @@ body
     width: 48px
     display: inline-block
     margin-right: 65px
+.logo_link
+    position: absolute
+    left: 0
 .nav
     background-color: #fff
-    padding: 16px 0
+    padding: 22px 0
     box-shadow: 0 2px 34px 0 rgba(0, 0, 0, 0.06)
 .nav_item
     font-weight: 500
@@ -45,9 +66,13 @@ body
         color: $accent
 .hero
     padding-top: 64px
-    background-repeat: no-repeat
-    background-size: 410px auto
-    background-position: 0 50%
+    position: relative
+    .hero_bg
+        position: absolute
+        width: 50%
+        max-width: 410px
+        left: 0
+        top: 20%
 .hero_text, .hero_img
     width: 50%
 .hero_img
@@ -154,8 +179,27 @@ body
         margin-right: 65px
 .brands_row
     margin-top: 15px
+.carousel_link
+    display: inline-block
 .home_contact
-    padding: 105px 0 200px
+    padding: 105px 45px 100px
+    box-sizing: border-box
+    position: relative
+    .home_contact_bg_1
+        position: absolute
+        right: 0
+        top: 0
+        transform: translateY(-65%)
+        z-index: -1
+        width: 30%
+        max-width: 665px
+    .home_contact_bg_2
+        position: absolute
+        left: 0
+        bottom: 0
+        z-index: -1
+        width: 30%
+        max-width: 150px
 .adress
     width: 40%
     max-width: 450px
@@ -183,7 +227,8 @@ body
     max-width: 260px
     display: block
 .services, .products
-    padding: 65px 0 165px
+    padding: 65px 45px 165px
+    box-sizing: border-box
 .services_heading_text
     font-size: 14px
     color: #000
@@ -293,20 +338,26 @@ body
     width: 315px
 .single_product_row
     align-items: flex-start
+    margin: 0 auto
     margin-top: 44px
+    width: 75%
     .p1
         color: rgba(0, 0, 0, 0.42)
         font-size: 12px
         font-weight: 500
         margin-bottom: 8px
-    .p2
-        text-transform: uppercase
-        margin-bottom: 16px
-        color: #000000
     .p3
         line-height: 1.38
         letter-spacing: 0.67px
         color: #000000
+        max-width: 350px
+        margin-bottom: 8px
+    .p2
+        line-height: 1.38
+        letter-spacing: 0.67px
+        color: $accent
+        margin-bottom: 8px
+        font-size: 24px
         max-width: 350px
 .single_product_image
     width: 100%
@@ -385,6 +436,8 @@ body
 .hamburger
     display: none
 @media screen and ( max-width: 968px )
+    .logo_link
+        position: inherit
     .contact_row
         margin-bottom: 50px
     .contact_text_info
@@ -403,6 +456,8 @@ body
     .product_grid_item
         max-width: 215px
     .services, .products
+        padding-right: 14px
+        padding-left: 14px
         padding-bottom: 80px
     .service_item
         width: 45%
@@ -454,6 +509,9 @@ body
         text-transform: uppercase
         font-weight: 500
 @media screen and ( max-width: 568px )
+    .products_nav
+        overflow: auto
+        flex-wrap: nowrap
     .contact_text_info
         .adress_col
             text-align: left
@@ -483,7 +541,7 @@ body
         justify-content: flex-start
     .product_grid_item:not(:nth-child(3n))
         margin-right: 10px
-    .products_nav_item 
+    .products_nav_item
         padding: 14px
     .service_item
         width: 100%
@@ -522,3 +580,16 @@ body
         width: 110%
     .hero_text, .hero_img
         width: 100%
+    .single_product_row
+        width: auto
+    .home_contact
+        .home_contact_bg_1
+            width: 100%
+            transform: none
+        .home_contact_bg_2
+            display: none
+    .home_contact
+        padding-right: 20px
+        padding-left: 20px
+    .single_bg_bottom
+        display: none

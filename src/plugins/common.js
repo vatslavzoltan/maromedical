@@ -4,6 +4,7 @@ import Container from '@/components/Container.vue'
 import Row from '@/components/Row.vue'
 import Heading from '@/components/Heading.vue'
 import Header from '@/components/Header.vue'
+import SinglePage from '@/components/SinglePage.vue'
 import VueSplide from '@splidejs/vue-splide';
 import * as VueGoogleMaps from 'vue2-google-maps'
 import Geocoder from "@pderas/vue2-geocoder";
@@ -14,6 +15,7 @@ Vue.component('Row', Row)
 Vue.component('Container', Container)
 Vue.component('Heading', Heading)
 Vue.component('Header', Header)
+Vue.component('SinglePage', SinglePage)
 Vue.prototype.$apiUrl = 'http://174.138.50.91';
 Vue.use(VueGoogleMaps, {
     load: {

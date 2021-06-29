@@ -1,8 +1,8 @@
 <template>
   <div id="nav" class="nav">
     <Container>
-      <Row custom="js header_row">
-        <router-link to="/">
+      <Row custom="jc header_row">
+        <router-link to="/" class="logo_link">
           <img class="logo" alt="Better life" src="@/assets/logo.png" />
         </router-link>
         <div class="desc_menu">

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div class="hero">
+      <img class="hero_bg" src="@/assets/h_t_l_bg.svg" />
       <Container>
         <Row custom="jb">
           <div class="hero_text">
@@ -68,6 +69,8 @@
     </div>
     <Brands />
     <div class="home_contact">
+      <img class="home_contact_bg_1" src="@/assets/h_b_r_bg.svg" />
+      <img class="home_contact_bg_2" src="@/assets/h_b_l_bg.svg" />
       <Container>
         <Row custom="jb">
           <div class="adress">

@@ -50,8 +50,7 @@ body
     display: inline-block
     margin-right: 65px
 .logo_link
-    position: absolute
-    left: 0
+    margin-left: 50px
 .nav
     background-color: #fff
     padding: 22px 0
@@ -350,7 +349,7 @@ body
         line-height: 1.38
         letter-spacing: 0.67px
         color: #000000
-        max-width: 350px
+        // max-width: 350px
         margin-bottom: 8px
     .p2
         line-height: 1.38
@@ -358,7 +357,9 @@ body
         color: $accent
         margin-bottom: 8px
         font-size: 24px
-        max-width: 350px
+        // max-width: 30px
+.product_descr
+    width: 60%
 .single_product_image
     width: 100%
     max-width: 315px
@@ -428,6 +429,7 @@ body
     margin: 0 auto
 .footer
     padding: 22px 0
+    padding-left: 45px
     color: #66757c
     font-size: 12px
     line-height: 20px
@@ -435,6 +437,8 @@ body
     display: none
 .hamburger
     display: none
+.wrapper.carousel
+    min-height: 45vh
 @media screen and ( max-width: 968px )
     .logo_link
         position: inherit
@@ -553,6 +557,7 @@ body
         box-sizing: border-box
     .brands
         padding-bottom: 0
+        padding-top: 0
     .adress_1
         text-align: center
     .adress_2
@@ -593,3 +598,5 @@ body
         padding-left: 20px
     .single_bg_bottom
         display: none
+    .about_hero
+        margin-bottom: -100px

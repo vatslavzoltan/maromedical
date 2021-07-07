@@ -2,13 +2,13 @@
   <div class="wrapper carousel">
     <splide :options="options">
       <splide-slide v-for="slide in list" :key="slide.id">
-        <a class="carousel_link" :href="`/product/${slide.id}`">
+        <router-link class="carousel_link" :to="`/product/${slide.id}`">
           <img
             :src="`${$apiUrl}/image/${slide.image_url}`"
             alt="#"
             class="featured_product_image"
           />
-        </a>
+        </router-link>
       </splide-slide>
     </splide>
   </div>

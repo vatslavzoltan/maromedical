@@ -63,7 +63,9 @@
     </div>
     <div class="featured">
       <Container>
-        <Heading>Featured latest Products</Heading>
+        <Heading>
+          <router-link to="/products">Featured latest Products</router-link>
+        </Heading>
       </Container>
       <Carousel v-if="featuredProducts.length" :list="featuredProducts" />
     </div>
